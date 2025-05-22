@@ -72,7 +72,7 @@ export function StudyPlanForm() {
     a.click()
     URL.revokeObjectURL(url)
   }
-
+ // htmlToPdf v2 wala library use garna paryo
   const downloadAsPdf = (text: string) => {
     const doc = new jsPDF()
     const lines = doc.splitTextToSize(text, 180)
@@ -178,9 +178,10 @@ export function StudyPlanForm() {
                 <Label htmlFor="notes">Additional Notes</Label>
                 <Textarea
                   id="notes"
+                  
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  placeholder="Enter goals, weak areas, preferences, current skill level, etc."
+                  placeholder="Enter goals, weak areas, preferences, current skill level.[Eg: Absolute beginer, Intermediate, etc.]"
                   className="min-h-[100px]"
                 />
               </motion.div>
